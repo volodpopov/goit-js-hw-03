@@ -9,19 +9,16 @@ const products = [
 
 const getAllPropValues = function (arr, prop) {
   const arrayOfProperties = [];
-  let property;
   for (const item of arr) {
-    property = item[prop];
-    if (property === undefined){
-      break;
+    if (item.hasOwnProperty(prop)) {
+      arrayOfProperties.push(item[prop]);
     }
-    arrayOfProperties.push(property);
   }
-    return arrayOfProperties;
+  return arrayOfProperties;
 };
 
-console.log(getAllPropValues(products, 'name')); 
+console.log(getAllPropValues(products, 'name'));
 
-console.log(getAllPropValues(products, 'quantity')); 
+console.log(getAllPropValues(products, 'quantity'));
 
-console.log(getAllPropValues(products, 'category')); 
+console.log(getAllPropValues(products, 'category'));
